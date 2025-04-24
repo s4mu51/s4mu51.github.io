@@ -11,11 +11,11 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "es-ES"
-title                    : "Minimal Mistakes"
+title                    : "s4mu51 - HackBook"
 title_separator          : "-"
 subtitle                 : "Personal Cybersecurity Book"
 name                     : "s4mu51"
-description              : "Minimal Mistakes theme test."
+description              : #
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : #""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -97,19 +97,26 @@ author:
   bio: |
     Cybersecurity Analyst  
     CRTP – eCPPT – eWPT – eJPT
-
   #location         : "Somewhere"
   links:
     - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://s4mu51.github.io"
+      icon: "/assets/images/general/pacman.svg" 
+      url: "https://s4mu51.github.io" 
     - label: "Linkedin"
-      icon: "fab fa-fw fa-linkedin"
+      icon: "/assets/images/general/linkedin.svg" 
       url: "https://www.linkedin.com/in/samuelarguellesforonda/"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
+      icon: "/assets/images/general/github.svg"
       url: "https://github.com/s4mu51"
-
+    - label: "HackTheBox"
+      icon: "/assets/images/general/htb.svg"
+      url: "https://app.hackthebox.com/profile/286949"
+    - label: "TryHackMe"
+      icon: "/assets/images/general/thm.svg"
+      url: "https://tryhackme.com/p/s4mu51"
+    - label: "Yogosha"
+      icon: "/assets/images/general/yogosha.png"
+      url: "https://app.yogosha.com/r/s4mu51"
 
 # Site Footer
 footer:
