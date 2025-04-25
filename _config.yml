@@ -50,8 +50,8 @@ comments: false
 #     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
 # atom_feed:
 #   path                   : # blank (default) uses feed.xml
-# search                   : true # true, false (default)
-# search_full_content      : true # true, false (default)
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
 # search_provider          : "lunr"
 # lunr:
 #   search_within_pages    : true
@@ -66,22 +66,6 @@ comments: false
 # bing_site_verification   :
 # yandex_site_verification :
 
-# Social Sharing
-# twitter:
-#   username               : "mmistakes"
-# facebook:
-#   username               :
-#   app_id                 :
-#   publisher              :
-# og_image                 : "/assets/images/bio-photo.jpg"
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
-# social:
-#   type                   : # Person or Organization (defaults to Person)
-#   name                   : # If the user or organization name differs from the site's name
-#   links: # An array of links to social media profiles
-#     - https://twitter.com/
-#     - https://github.com/
 
 # Analytics
 analytics:
