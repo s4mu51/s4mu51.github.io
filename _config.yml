@@ -10,7 +10,7 @@ remote_theme             : "mmistakes/minimal-mistakes@4.27.0"
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "es-ES"
+locale                   : "en-EN"
 title                    : "s4mu51 - HackBook"
 title_separator          : "-"
 subtitle                 : "Personal Cybersecurity Book"
