@@ -1,0 +1,28 @@
+<!-- Guarda esto como "fantasmita.svg" -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" width="256" height="320" aria-labelledby="title">
+  <title id="title">Fantasmita estilo Pac-Man alargado</title>
+
+  <!-- Cuerpo del fantasma -->
+  <path d="M8 40
+       A24 28 0 0 1 56 40
+       L56 64
+       Q48 56 40 64
+       Q32 56 24 64
+       Q16 56 8 64
+       Z" fill="#ff2b2b"></path>
+
+  <!-- Parte superior redondeada (la cabeza) -->
+  <path d="M8 40
+       A24 28 0 0 1 56 40
+       L56 44
+       A20 24 0 0 0 8 44
+       Z" fill="#ff2b2b"></path>
+
+  <!-- Ojos -->
+  <g transform="translate(0,8)">
+    <ellipse cx="24" cy="28" rx="6.5" ry="9" fill="#ffffff"></ellipse>
+    <ellipse cx="40" cy="28" rx="6.5" ry="9" fill="#ffffff"></ellipse>
+    <circle cx="26" cy="30" r="3.2" fill="#000000"></circle>
+    <circle cx="42" cy="30" r="3.2" fill="#000000"></circle>
+  </g>
+</svg>
