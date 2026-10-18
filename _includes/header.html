@@ -1,22 +1,23 @@
-<div id="particles-js">
-  <div class="header">
-      <h1>
-        <span class="site-title">{{site.username}}</span>
-        <span class="site-description">{{site.user_title}}</span>
-      </h1>
-      <div class="header-icons">
-        <!-- <a aria-label="Send email" href="#"><i class="icon fa fa-envelope"></i></a> -->
-        <!-- <a aria-label="My Twitter" target="_blank" href="#"><i class="icon fa fa-twitter" aria-hidden="true"></i></a> -->
-        <a aria-label="Linkedin" target="_blank" href={{site.linkedin_username}}> <img src="{{ '/assets/img/linkedin.svg' | relative_url }}" alt="LinkedIn" style="width:75px; height:75px;"> </a>
-        <a aria-label="Github" target="_blank" href="{{site.github_username}}"> <img src="{{ '/assets/img/github.svg' | relative_url }}" alt="LinkedIn" style="width:75px; height:75px;"> </a>
-        <a aria-label="HTB" target="_blank" href="{{site.htb_username}}"> <img src="{{ '/assets/img/htb.svg' | relative_url }}" alt="LinkedIn" style="width:60px; height:60px; position: relative; top: 8px;"> </a>
-        <a aria-label="THM" target="_blank" href="{{site.thm_username}}"> <img src="{{ '/assets/img/thm.svg' | relative_url }}" alt="LinkedIn" style="width:60px; height:60px; position: relative; top: 8px; position: relative; left: 6px;"> </a>
-        <a aria-label="Yogosha" target="_blank" href="{{site.yogosha_username}}"> <img src="{{ '/assets/img/yogosha.png' | relative_url }}" alt="LinkedIn" style="width:75px; height:75px;position: relative; left: 6px;"> </a>
-      </div>
-      <div class="header-links">
-        <!-- <a class="link" href="#about" data-scroll>About Me</a> -->
-        <!--<a class="link" href="#projects" data-scroll>Projects</a> -->
-      </div>
+<header id="hero">
+  <div id="particles-js"></div>
+
+  <div class="hero-inner">
+    <p class="hero-prompt">
+      <span class="c-accent">root@localhost</span> $ <span class="typed">whoami</span><span class="caret"></span>
+    </p>
+
+    <h1 class="glitch" data-text="{{ site.username }}">{{ site.username }}</h1>
+
+    <p class="hero-role">{{ site.user_title }}</p>
+
+    <ul class="socials">
+      <li><a class="social" aria-label="LinkedIn" target="_blank" rel="noopener" href="{{ site.linkedin_username }}"><img src="{{ '/assets/img/linkedin.svg' | relative_url }}" alt="LinkedIn"></a></li>
+      <li><a class="social" aria-label="GitHub" target="_blank" rel="noopener" href="{{ site.github_username }}"><img src="{{ '/assets/img/github.svg' | relative_url }}" alt="GitHub"></a></li>
+      <li><a class="social" aria-label="Hack The Box" target="_blank" rel="noopener" href="{{ site.htb_username }}"><img src="{{ '/assets/img/htb.svg' | relative_url }}" alt="Hack The Box"></a></li>
+      <li><a class="social" aria-label="TryHackMe" target="_blank" rel="noopener" href="{{ site.thm_username }}"><img src="{{ '/assets/img/thm.svg' | relative_url }}" alt="TryHackMe"></a></li>
+      <li><a class="social" aria-label="Yogosha" target="_blank" rel="noopener" href="{{ site.yogosha_username }}"><img src="{{ '/assets/img/yogosha.png' | relative_url }}" alt="Yogosha"></a></li>
+    </ul>
   </div>
-  <!-- <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a> -->
-</div>
+
+  <a class="scroll-cue" href="#certifications" data-scroll aria-label="Scroll to content"><span></span></a>
+</header>

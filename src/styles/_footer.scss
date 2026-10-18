@@ -1,21 +1,60 @@
 .footer {
-  background: $main;
-  padding: 10px 0;
-  margin-top: 100px;
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  padding: 44px 20px 32px;
   text-align: center;
-  color: #FFF;
-  .love {
-    color: red;
+  border-top: 1px solid $border;
+  background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, .04));
+}
+
+.footer-mono {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: .85rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px $glow-soft;
+}
+
+// Pac-Man easter egg
+.footer-pac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+
+  img.pac {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 7px #ffd23f);
   }
-  a {
-    text-decoration: none;
-    margin: 0;
-    color: #FFF;
-    &:hover{
-      color: $sec;
-    }
-    &:active {
-      color: $sec;
-    }
+  img.ghost {
+    width: 26px;
+    height: 32px;
+    transition: transform .3s ease;
   }
+  img.g-red  { filter: drop-shadow(0 0 6px rgba(255, 43, 43, .6)); }
+  img.g-pink { filter: drop-shadow(0 0 6px rgba(255, 184, 255, .6)); }
+  img.g-cyan { filter: drop-shadow(0 0 6px rgba(34, 211, 238, .6)); }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $cyan;
+    box-shadow: 0 0 8px $glow;
+  }
+
+  &:hover img.ghost { transform: translateY(-4px); }
+  &:hover img.g-pink { transition-delay: .06s; }
+  &:hover img.g-cyan { transition-delay: .12s; }
+}
+
+.footer-copy {
+  font-family: $font-mono;
+  color: $text-dim;
+  font-size: .78rem;
+  letter-spacing: 1px;
+  margin-top: 10px;
 }

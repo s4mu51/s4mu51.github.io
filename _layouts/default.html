@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
-  <body>
-      {% include header.html %}
-      - <section id="about">
-        {% include about.html %}
-      </section>
-      <section id="projects">
-        {% include projects.html %}
-      </section> 
-        {{ content }}
-      {% include footer.html %}
-  </body>
+{% include head.html %}
+<body>
+  <div class="fx-overlay" aria-hidden="true"></div>
+  {% include nav.html %}
+  {% include header.html %}
+  <main>
+    <section id="certifications" class="section">
+      {% include about.html %}
+    </section>
+    <section id="experience" class="section">
+      {% include projects.html %}
+    </section>
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>

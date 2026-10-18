@@ -1,118 +1,78 @@
-/* sweetScroll load */
 document.addEventListener("DOMContentLoaded", function () {
-  new SweetScroll({/* some options */});
+  /* Smooth scrolling for [data-scroll] anchors */
+  if (window.SweetScroll) {
+    new SweetScroll({ duration: 700, easing: "easeOutCubic" });
+  }
 
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-  particlesJS('particles-js', {
-    "particles": {
-      "number": {
-        "value": 30,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "shape": {
-        "type": "polygon",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
-        },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 3,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 19.18081918081918,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 4,
-        "direction": "none",
-        "random": true,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      },
-      nb: 80
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": false,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 400,
-          "line_linked": {
-            "opacity": 1
-          }
-        },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 200,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
-        }
-      }
-    },
-    "retina_detect": true
-  });
+  /* Cycle the nav brand text: pwned! -> try_harder -> skull */
+  var brand = document.getElementById("brand-text");
+  if (brand) {
+    var brandItems = ["pwned!", "try_harder", "r00t"];
+    var bi = 0;
+    setInterval(function () {
+      brand.style.opacity = "0";
+      setTimeout(function () {
+        bi = (bi + 1) % brandItems.length;
+        var item = brandItems[bi];
+        brand.textContent = item;
+        brand.setAttribute("data-text", item);
+        brand.style.opacity = "1";
+      }, 200);
+    }, 3800);
+  }
 
+  /* Add a solid background to the nav once the page is scrolled */
+  var nav = document.getElementById("nav");
+  function onScroll() {
+    if (!nav) return;
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* Particle network background — cyan / electric blue */
+  if (window.particlesJS) {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 55, density: { enable: true, value_area: 900 } },
+        color: { value: ["#22d3ee", "#6ef3ff", "#2a3f5a"] },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: { enable: true, speed: 0.6, opacity_min: 0.1, sync: false }
+        },
+        size: { value: 2.5, random: true },
+        line_linked: {
+          enable: true,
+          distance: 140,
+          color: "#22d3ee",
+          opacity: 0.22,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 160, line_linked: { opacity: 0.5 } },
+          push: { particles_nb: 3 }
+        }
+      },
+      retina_detect: true
+    });
+  }
 }, false);

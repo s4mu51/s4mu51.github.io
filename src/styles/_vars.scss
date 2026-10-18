@@ -1,4 +1,31 @@
-$main: #1a222c;
-$sec: #4B5664;
-$purple: #54516A;
-$cut: 550px;
+// ── Design tokens ──────────────────────────────────────────────
+// Backgrounds
+$bg:          #080b12;   // near-black blue
+$bg-2:        #0b1019;
+$surface:     #0f1623;   // cards
+$surface-2:   #131d2e;
+
+// Text
+$heading:     #eaf4fb;
+$text:        #bccadb;
+$text-dim:    #6f84a0;
+
+// Accent — cyan / electric blue
+$cyan:        #22d3ee;
+$cyan-bri:    #6ef3ff;
+$cyan-deep:   #0e7490;
+$magenta:     #f0309a;   // secondary cyberpunk accent (sparingly)
+
+// Lines & glow
+$border:        rgba(34, 211, 238, .16);
+$border-strong: rgba(34, 211, 238, .55);
+$glow:          rgba(34, 211, 238, .45);
+$glow-soft:     rgba(34, 211, 238, .22);
+
+// Layout
+$maxw: 1060px;
+$cut:  650px;
+
+// Fonts
+$font-display: 'Rajdhani', system-ui, sans-serif;
+$font-mono:    'Share Tech Mono', ui-monospace, monospace;

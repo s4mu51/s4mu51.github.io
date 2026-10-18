@@ -1,29 +1,30 @@
- <div class="user-details">
-  <h1>Certifications</h1>
-  <p> {{site.user_description}} </p>
-</div>
-  <div class="user">
-    <div class="tech">
-      <h2>OSCP+</h2>
-      <img src="{{ '/assets/img/oscp.png' | relative_url }}" alt="OSCP+" style="width:200px; height:200px;">
-      <p>Offensive Security Certified Professional</p>
-    </div>
-    <div class="tech">
-      <h2>CRTP</h2>
-      <img src="{{ '/assets/img/CRTP.png' | relative_url }}" alt="CRTP" style="width:213px; height:213x;"> 
-      <p>Certified Red Team Professional</p>
-    </div>
-    <div class="tech">
-      <h2>eCPPT</h2>
-      <img src="{{ '/assets/img/ecppt.svg' | relative_url }}" alt="eCPPT" style="width:150px; height:150x;"> 
-      <p>Certified Professional Penetration Tester</p>
-    </div>
-    <div class="tech">
-      <h2>eWPT</h2>
-      <img src="{{ '/assets/img/ewpt.svg' | relative_url }}" alt="CRTP" style="width:150px; height:150x;"> 
-      <p>Web Application Penetration Tester</p>
-    </div>
+<div class="section-head">
+  <p class="section-kicker">// credentials</p>
+  <h2 class="section-title">Certifications</h2>
 </div>
 
+<div class="cert-grid">
+  <article class="card cert">
+    <div class="cert-badge"><img src="{{ '/assets/img/oscp.png' | relative_url }}" alt="OSCP+"></div>
+    <h3>OSCP+</h3>
+    <p>Offensive Security Certified Professional</p>
+  </article>
 
+  <article class="card cert">
+    <div class="cert-badge"><img src="{{ '/assets/img/CRTP.png' | relative_url }}" alt="CRTP"></div>
+    <h3>CRTP</h3>
+    <p>Certified Red Team Professional</p>
+  </article>
 
+  <article class="card cert">
+    <div class="cert-badge"><img src="{{ '/assets/img/ecppt.svg' | relative_url }}" alt="eCPPT"></div>
+    <h3>eCPPT</h3>
+    <p>Certified Professional Penetration Tester</p>
+  </article>
+
+  <article class="card cert">
+    <div class="cert-badge"><img src="{{ '/assets/img/ewpt.svg' | relative_url }}" alt="eWPT"></div>
+    <h3>eWPT</h3>
+    <p>Web Application Penetration Tester</p>
+  </article>
+</div>

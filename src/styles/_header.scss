@@ -1,122 +1,131 @@
-#particles-js {
-  background: $main;
-  display: flex;
-  vertical-align: bottom;
-  width: 100%;
+#hero {
+  position: relative;
   min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  .particles-js-canvas-el {
-    width:100% !important;
-    height:100vh !important;
-  }
-}
-
-.header {
-  z-index: 1;
-  text-align: center;
-  color:#FFF;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  .site-title {
-    font-size: 50px;
-    display: block;
-    line-height: 1;
-    color: #FFF;
-    @media only screen and (min-width:$cut){
-      margin: 0;
-      font-size: 100px;
-    }
-  }
-  .site-description {
-    font-size: 20px;
-    display: block;
-    line-height: 1;
-    color: #FFF;
-    margin-top: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 40px;
-    }
-  }
-}
-
-.header-links {
-  margin: 10px;
-  .link {
-    color: #FFF;
-    text-decoration: none;
-    font-size: 15px;
-    margin: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 20px;
-    }
-  }
-}
-
-.header-icons {
   display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  .icon {
-    text-align: center;
-    color: #FFF;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
-    transition: all .7s;
-    &:hover {
-      color: $main;
-      background: #FFF;
-    }
-    &:active {
-      color: $main;
-      background: #FFF;
-    }
-    @media only screen and (min-width:$cut) {
-      width: 35px;
-      height: 35px;
-      font-size: 35px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(34, 211, 238, .10), transparent 60%),
+    $bg;
+}
+
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  canvas { display: block; }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero-prompt {
+  font-family: $font-mono;
+  font-size: .95rem;
+  color: $text-dim;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+
+  .c-accent { color: $cyan; }
+  .typed { color: $heading; }
+}
+
+#hero h1.glitch {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  line-height: 1;
+
+  @media (min-width: $cut) { font-size: 7rem; }
+}
+
+.hero-role {
+  margin-top: 16px;
+  font-family: $font-mono;
+  font-size: 1rem;
+  color: $text;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  @media (min-width: $cut) { font-size: 1.3rem; }
+}
+
+// ── Social icons (neon-framed, mono-white, glow on hover) ───────
+.socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+}
+
+.social {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid $border-strong;
+  background: rgba(15, 22, 35, .6);
+  transition: transform .25s ease, border-color .25s ease,
+              background .25s ease, box-shadow .25s ease;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px),
+                     calc(100% - 12px) 100%, 0 100%, 0 12px);
+
+  img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: .82;
+    transition: filter .25s ease, opacity .25s ease;
+  }
+
+  &:hover {
+    border-color: $cyan;
+    background: rgba(34, 211, 238, .08);
+    box-shadow: 0 0 18px -2px $glow;
+    transform: translateY(-4px);
+
+    img {
+      filter: brightness(0) invert(1) drop-shadow(0 0 6px $cyan);
+      opacity: 1;
     }
   }
 }
 
-.down {
-  color: #FFF;
+// ── Scroll cue ─────────────────────────────────────────────────
+.scroll-cue {
   position: absolute;
-  bottom: 25px;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  cursor: pointer;
-  .icon {
-      position: absolute;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      fill: #fff;
-      -webkit-animation: pulse 1.3s infinite;
-      animation: pulse 1.3s infinite;
-      &:hover {
-        color: $sec;
-      }
-      &:active {
-        color: $sec;
-      }
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 26px;
+  height: 42px;
+  border: 2px solid $border-strong;
+  border-radius: 14px;
+  transition: border-color .25s ease;
+
+  span {
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 4px;
+    height: 8px;
+    background: $cyan;
+    border-radius: 2px;
+    box-shadow: 0 0 8px $glow;
+    animation: cue 1.8s infinite;
   }
+
+  &:hover { border-color: $cyan; }
 }

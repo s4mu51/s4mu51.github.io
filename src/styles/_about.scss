@@ -1,33 +1,49 @@
-#about {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 960px;
-  @media only screen and (min-width: $cut) {
-    width: 80%;
-  }
+// ── Certifications grid ────────────────────────────────────────
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px;
 }
 
-.tech {
-  margin: 10px;
-}
-
-.user {
+.cert {
+  padding: 30px 18px 26px;
   text-align: center;
-  font-size: 60px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  p {
-    font-size: 16px;
-  }
-  @media only screen and (min-width: $cut) {
-    flex-wrap: nowrap;
-    font-size: 75px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cert-badge {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+
+  img {
+    max-height: 150px;
+    width: auto;
+    filter: drop-shadow(0 0 14px rgba(34, 211, 238, .22));
+    transition: filter .25s ease, transform .25s ease;
   }
 }
 
-.user-details {
-  text-align: center;
-  margin: 5px auto;
+.cert:hover .cert-badge img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 22px $glow);
+}
+
+.cert h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: $heading;
+}
+
+.cert p {
+  margin-top: 8px;
+  font-family: $font-mono;
+  font-size: .82rem;
+  color: $text-dim;
+  line-height: 1.45;
 }

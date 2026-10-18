@@ -1,15 +1,19 @@
 <footer class="footer">
-    
-    <p>
-        <img src="{{ '/assets/img/pacman.svg' | relative_url }}" alt="pacman" style="width: 25px; height:25px; position: relative; top: 10px;">
-        <img src="{{ '/assets/img/htb.svg' | relative_url }}" alt="pacman" style="width: 5px; height:5px;">
-        <img src="{{ '/assets/img/htb.svg' | relative_url }}" alt="pacman" style="width: 5px; height:5px;">
-        <img src="{{ '/assets/img/htb.svg' | relative_url }}" alt="pacman" style="width: 5px; height:5px;">
-        <img src="{{ '/assets/img/fantasmita.svg' | relative_url }}" alt="pacman" style="width: 25px; height:25px;position: relative; top: 10px;">
-    </p>
+  <p class="footer-mono">// end_of_line</p>
 
-    <p><a></a></p>
+  <div class="footer-pac" aria-hidden="true">
+    <img class="pac" src="{{ '/assets/img/pacman.svg' | relative_url }}" alt="">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <img class="ghost g-red" src="{{ '/assets/img/ghost-red.svg' | relative_url }}" alt="">
+    <img class="ghost g-pink" src="{{ '/assets/img/ghost-pink.svg' | relative_url }}" alt="">
+    <img class="ghost g-cyan" src="{{ '/assets/img/ghost-cyan.svg' | relative_url }}" alt="">
+  </div>
+
+  <p class="footer-copy">&copy; {{ site.time | date: '%Y' }} {{ site.username }} — crafted in the terminal</p>
 </footer>
+
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="{{ "/assets/js/sweet-scroll.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
