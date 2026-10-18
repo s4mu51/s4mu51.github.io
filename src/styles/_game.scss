@@ -1,0 +1,144 @@
+// ── Comecocos modal ────────────────────────────────────────────
+.pac-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(4, 7, 12, .85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  &[hidden] { display: none; }
+}
+
+.pac-dialog {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(160deg, $surface, $bg-2);
+  border: 1px solid $border-strong;
+  box-shadow: 0 0 0 1px $glow-soft, 0 24px 60px -16px $glow;
+  padding: 14px;
+  position: relative;
+}
+
+.pac-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: $font-mono;
+}
+.pac-title {
+  color: $cyan;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px $glow-soft;
+}
+.pac-stats {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+  font-size: .8rem;
+  color: $text-dim;
+  b { color: $heading; }
+}
+.pac-close {
+  background: transparent;
+  border: 1px solid $border;
+  color: $text-dim;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: all .2s ease;
+  &:hover { border-color: $cyan; color: $cyan; box-shadow: 0 0 12px -2px $glow; }
+}
+
+.pac-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#pac-canvas {
+  width: 100%;
+  max-width: 304px;
+  height: auto;
+  image-rendering: pixelated;
+  background: #070b12;
+  border: 1px solid $border;
+}
+
+.pac-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(4, 7, 12, .78);
+  text-align: center;
+  &[hidden] { display: none; }
+}
+.pac-msg {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px $glow;
+}
+.pac-btn {
+  font-family: $font-mono;
+  background: transparent;
+  border: 1px solid $border-strong;
+  color: $cyan;
+  padding: 10px 22px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s ease;
+  &:hover { background: rgba(34, 211, 238, .1); box-shadow: 0 0 18px -2px $glow; }
+}
+
+.pac-controls { margin-top: 12px; text-align: center; }
+.pac-hint {
+  font-family: $font-mono;
+  font-size: .72rem;
+  color: $text-dim;
+  letter-spacing: .5px;
+}
+
+.pac-dpad {
+  margin-top: 10px;
+  display: none; // only on touch devices
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  div { display: flex; gap: 6px; }
+  button {
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+    background: rgba(15, 22, 35, .7);
+    border: 1px solid $border-strong;
+    color: $cyan;
+    cursor: pointer;
+    &:active { background: rgba(34, 211, 238, .15); }
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .pac-dpad { display: flex; }
+  .pac-hint { display: none; }
+}
+
+// Footer Pac-Man scene becomes an interactive "play" button
+.footer-pac {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: filter .25s ease, transform .25s ease;
+  &:hover { transform: scale(1.06); }
+  &:focus-visible { outline: 2px solid $cyan; outline-offset: 6px; }
+}

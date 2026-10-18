@@ -1,0 +1,32 @@
+<div id="pac-modal" class="pac-modal" hidden aria-hidden="true" role="dialog" aria-label="Comecocos">
+  <div class="pac-dialog">
+    <div class="pac-bar">
+      <span class="pac-title">// comecocos</span>
+      <div class="pac-stats">
+        <span>SCORE <b id="pac-score">0</b></span>
+        <span>LIVES <b id="pac-lives">3</b></span>
+      </div>
+      <button id="pac-close" class="pac-close" aria-label="Cerrar">&#10005;</button>
+    </div>
+
+    <div class="pac-stage">
+      <canvas id="pac-canvas" width="304" height="336"></canvas>
+      <div id="pac-overlay" class="pac-overlay" hidden>
+        <p id="pac-msg" class="pac-msg"></p>
+        <button id="pac-restart" class="pac-btn">&#9654; Jugar</button>
+      </div>
+    </div>
+
+    <div class="pac-controls">
+      <p class="pac-hint">Mueve con &larr; &uarr; &rarr; &darr; o WASD &middot; ESC para salir</p>
+      <div class="pac-dpad" aria-hidden="true">
+        <button data-dir="up">&#9650;</button>
+        <div>
+          <button data-dir="left">&#9664;</button>
+          <button data-dir="down">&#9660;</button>
+          <button data-dir="right">&#9654;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

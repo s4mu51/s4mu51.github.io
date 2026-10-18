@@ -30,6 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* Footer Pac-Man scene -> launch the playable game */
+  var pacScene = document.querySelector(".footer-pac");
+  if (pacScene) {
+    var launch = function () { if (window.PacmanGame) window.PacmanGame.open(); };
+    pacScene.addEventListener("click", launch);
+    pacScene.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); launch(); }
+    });
+  }
+
   /* Particle network background — cyan / electric blue */
   if (window.particlesJS) {
     particlesJS("particles-js", {
