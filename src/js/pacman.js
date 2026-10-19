@@ -1,5 +1,5 @@
 /* ───────────────────────────────────────────────────────────────
-   Comecocos — a compact, playable Pac-Man for the footer easter egg.
+   Pac-Man — a compact, playable Pac-Man for the footer easter egg.
    Opens in a modal via window.PacmanGame.open().
    Tiles: # wall · = ghost-house door · . pellet · o power pellet · (space) empty
    ─────────────────────────────────────────────────────────────── */
@@ -355,8 +355,8 @@
     if (running) { draw(); raf = requestAnimationFrame(loop); }
   }
 
-  function win() { running = false; showOverlay("¡GANASTE! " + score + " pts", "▶ Otra vez"); }
-  function gameOver() { running = false; showOverlay("GAME OVER · " + score + " pts", "▶ Reintentar"); }
+  function win() { running = false; showOverlay("YOU WIN! " + score + " pts", "▶ Play again"); }
+  function gameOver() { running = false; showOverlay("GAME OVER · " + score + " pts", "▶ Retry"); }
 
   function showOverlay(msg, btn) {
     if (!elOverlay) return;

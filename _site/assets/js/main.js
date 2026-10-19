@@ -40,6 +40,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* Experience cards -> open detail modal */
+  var xpModal = document.getElementById("xp-modal");
+  if (xpModal) {
+    var xpBody = document.getElementById("xp-modal-body");
+    var xpCompany = document.getElementById("xp-modal-company");
+    var xpRole = document.getElementById("xp-modal-role");
+
+    var openXp = function (card) {
+      var c = card.querySelector(".xp-company");
+      var ro = card.querySelector(".xp-role");
+      var detail = card.querySelector(".xp-detail");
+      xpCompany.textContent = c ? c.textContent.trim() : "";
+      xpRole.textContent = ro ? ro.textContent.trim() : "";
+      xpBody.innerHTML = detail ? detail.innerHTML : "";
+      xpModal.hidden = false;
+      xpModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    var closeXp = function () {
+      xpModal.hidden = true;
+      xpModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    Array.prototype.forEach.call(document.querySelectorAll(".xp"), function (card) {
+      card.addEventListener("click", function () { openXp(card); });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openXp(card); }
+      });
+    });
+    document.getElementById("xp-close").addEventListener("click", closeXp);
+    xpModal.addEventListener("click", function (e) { if (e.target === xpModal) closeXp(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !xpModal.hidden) closeXp();
+    });
+  }
+
   /* Particle network background — cyan / electric blue */
   if (window.particlesJS) {
     particlesJS("particles-js", {

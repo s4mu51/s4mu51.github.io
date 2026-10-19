@@ -1,0 +1,175 @@
+// ── Experience cards: clickable affordance ─────────────────────
+.xp {
+  cursor: pointer;
+  position: relative;
+
+  &:focus-visible { outline: 2px solid $cyan; outline-offset: 4px; }
+}
+
+.xp-cue {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  font-family: $font-mono;
+  font-size: .72rem;
+  letter-spacing: 1px;
+  color: $text-dim;
+  transition: color .2s ease;
+
+  .xp-cue-plus {
+    display: inline-block;
+    margin-left: 6px;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    text-align: center;
+    border: 1px solid $border-strong;
+    color: $cyan;
+    transition: all .2s ease;
+  }
+}
+.xp:hover .xp-cue { color: $cyan; }
+.xp:hover .xp-cue-plus {
+  background: rgba(34, 211, 238, .12);
+  box-shadow: 0 0 10px -2px $glow;
+}
+
+// ── Experience modal ───────────────────────────────────────────
+.xp-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(4, 7, 12, .85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  &[hidden] { display: none; }
+}
+
+.xp-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 86vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, $surface, $bg-2);
+  border: 1px solid $border-strong;
+  box-shadow: 0 0 0 1px $glow-soft, 0 24px 60px -16px $glow;
+  padding: 28px 30px;
+}
+
+.xp-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid $border;
+  color: $text-dim;
+  cursor: pointer;
+  transition: all .2s ease;
+  &:hover { border-color: $cyan; color: $cyan; box-shadow: 0 0 12px -2px $glow; }
+}
+
+.xp-modal-kicker {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: .8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px $glow-soft;
+}
+.xp-modal-company {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: $heading;
+  margin-top: 4px;
+}
+.xp-modal-role {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: .9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.xp-modal-body { margin-top: 18px; }
+
+.xp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: $font-mono;
+  font-size: .78rem;
+  color: $text-dim;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid $border;
+
+  span { position: relative; }
+  span + span::before {
+    content: "·";
+    position: absolute;
+    left: -11px;
+    color: $cyan;
+  }
+}
+.xp-note {
+  font-size: .82rem;
+  color: $text-dim;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.xp-h {
+  font-family: $font-mono;
+  font-size: .78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $cyan;
+  margin: 18px 0 10px;
+}
+.xp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: $text;
+    font-size: .95rem;
+    line-height: 1.5;
+
+    &::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: $cyan;
+    }
+  }
+}
+
+.xp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    font-family: $font-mono;
+    font-size: .72rem;
+    letter-spacing: .5px;
+    color: $cyan;
+    padding: 4px 10px;
+    border: 1px solid $border;
+    background: rgba(34, 211, 238, .06);
+    transition: border-color .2s ease;
+  }
+}

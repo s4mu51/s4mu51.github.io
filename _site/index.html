@@ -92,22 +92,73 @@
 </div>
 
 <ol class="timeline">
-  <li class="card xp">
+  <li class="card xp" tabindex="0" role="button" aria-label="View dooingIT details">
     <h3 class="xp-company">dooingIT</h3>
     <p class="xp-role">Pentester</p>
-    <p class="xp-desc">Internal and web application penetration testing, NIST audits, internal network hardening, system virtualization, and backend development using Python.</p>
+    <p class="xp-desc">Penetration tester running offensive engagements across internal network, web application and Wi-Fi security. Also dooingIT's systems lead, managing the internal infrastructure.</p>
+    <span class="xp-cue">view more<span class="xp-cue-plus">+</span></span>
+
+    <div class="xp-detail" hidden>
+      <p class="xp-meta"><span>Mar 2022 – Present</span><span>Santiago de Compostela, Spain</span></p>
+      <h4 class="xp-h">Offensive Security</h4>
+      <ul class="xp-list">
+        <li>Internal network penetration testing</li>
+        <li>Web application penetration testing</li>
+        <li>Wi-Fi / wireless security assessments</li>
+        <li>NIST audits</li>
+      </ul>
+      <h4 class="xp-h">Systems &amp; Infrastructure</h4>
+      <ul class="xp-list">
+        <li>Management of dooingIT's internal infrastructure</li>
+        <li>Virtualization with Proxmox</li>
+        <li>Network &amp; firewall administration (Cisco, pfSense, VPN)</li>
+        <li>Internal tooling and backend development with Python</li>
+      </ul>
+      <h4 class="xp-h">Stack</h4>
+      <div class="xp-tags"><span>Internal</span><span>Web</span><span>Wi-Fi</span><span>NIST</span><span>Proxmox</span><span>Cisco</span><span>pfSense</span><span>VPN</span><span>Python</span></div>
+    </div>
   </li>
 
-  <li class="card xp">
+  <li class="card xp" tabindex="0" role="button" aria-label="View Tarlogic details">
     <h3 class="xp-company">Tarlogic</h3>
     <p class="xp-role">Cybersecurity Consultant</p>
-    <p class="xp-desc">Vulnerability management, security platform integration, risk scoring and early alerting, and automation of security processes using Python.</p>
+    <p class="xp-desc">Vulnerability management (mainly with Qualys) that grew into cyber-risk management and scoring with SecurityScorecard, alongside security process automation in Python.</p>
+    <span class="xp-cue">view more<span class="xp-cue-plus">+</span></span>
+
+    <div class="xp-detail" hidden>
+      <p class="xp-meta"><span>Jan 2021 – Feb 2022</span><span>Santiago de Compostela, Spain</span></p>
+      <h4 class="xp-h">Responsibilities</h4>
+      <ul class="xp-list">
+        <li>Vulnerability management with Qualys</li>
+        <li>Cyber-risk management &amp; scoring (SecurityScorecard, BitSight)</li>
+        <li>Integrations in RSA Archer</li>
+        <li>Early warning &amp; alerting</li>
+        <li>Security process automation with Python</li>
+      </ul>
+      <h4 class="xp-h">Stack</h4>
+      <div class="xp-tags"><span>Qualys</span><span>SecurityScorecard</span><span>BitSight</span><span>RSA Archer</span><span>Python</span></div>
+    </div>
   </li>
 
-  <li class="card xp">
+  <li class="card xp" tabindex="0" role="button" aria-label="View NTT Data details">
     <h3 class="xp-company">NTT Data</h3>
     <p class="xp-role">Cybersecurity Analyst</p>
-    <p class="xp-desc">Security consulting, secret discovery with Gitleaks and detect-secrets, development of OWASP ZAP plugins, and internal training on web and mobile auditing.</p>
+    <p class="xp-desc">Security analysis and consulting — hunting leaked secrets in source code, building custom OWASP ZAP plugins and running internal web & mobile auditing training.</p>
+    <span class="xp-cue">view more<span class="xp-cue-plus">+</span></span>
+
+    <div class="xp-detail" hidden>
+      <p class="xp-meta"><span>Sep 2020 – Jan 2021</span><span>A Coruña, Spain</span></p>
+      <p class="xp-note">Everis Aeroespacial y Defensa — acquired by NTT Data.</p>
+      <h4 class="xp-h">Responsibilities</h4>
+      <ul class="xp-list">
+        <li>Security consulting</li>
+        <li>Secret discovery with Gitleaks and detect-secrets</li>
+        <li>Development of new OWASP ZAP plugins</li>
+        <li>Internal training on web and mobile auditing</li>
+      </ul>
+      <h4 class="xp-h">Stack</h4>
+      <div class="xp-tags"><span>Gitleaks</span><span>detect-secrets</span><span>OWASP ZAP</span><span>Web</span><span>Mobile</span></div>
+    </div>
   </li>
 </ol>
 
@@ -117,7 +168,7 @@
   <footer class="footer">
   <p class="footer-mono">// end_of_line</p>
 
-  <div class="footer-pac" role="button" tabindex="0" aria-label="Jugar al comecocos" title="¡Dale para jugar al comecocos!">
+  <div class="footer-pac" role="button" tabindex="0" aria-label="Play Pac-Man" title="Click to play Pac-Man!">
     <img class="pac" src="/assets/img/pacman.svg" alt="">
     <span class="dot"></span>
     <span class="dot"></span>
@@ -138,27 +189,27 @@
 
 
 
-  <div id="pac-modal" class="pac-modal" hidden aria-hidden="true" role="dialog" aria-label="Comecocos">
+  <div id="pac-modal" class="pac-modal" hidden aria-hidden="true" role="dialog" aria-label="Pac-Man">
   <div class="pac-dialog">
     <div class="pac-bar">
-      <span class="pac-title">// comecocos</span>
+      <span class="pac-title">// pac-man</span>
       <div class="pac-stats">
         <span>SCORE <b id="pac-score">0</b></span>
         <span>LIVES <b id="pac-lives">3</b></span>
       </div>
-      <button id="pac-close" class="pac-close" aria-label="Cerrar">&#10005;</button>
+      <button id="pac-close" class="pac-close" aria-label="Close">&#10005;</button>
     </div>
 
     <div class="pac-stage">
       <canvas id="pac-canvas" width="304" height="336"></canvas>
       <div id="pac-overlay" class="pac-overlay" hidden>
         <p id="pac-msg" class="pac-msg"></p>
-        <button id="pac-restart" class="pac-btn">&#9654; Jugar</button>
+        <button id="pac-restart" class="pac-btn">&#9654; Play</button>
       </div>
     </div>
 
     <div class="pac-controls">
-      <p class="pac-hint">Mueve con &larr; &uarr; &rarr; &darr; o WASD &middot; ESC para salir</p>
+      <p class="pac-hint">Move with &larr; &uarr; &rarr; &darr; or WASD &middot; ESC to exit</p>
       <div class="pac-dpad" aria-hidden="true">
         <button data-dir="up">&#9650;</button>
         <div>
@@ -168,6 +219,16 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+  <div id="xp-modal" class="xp-modal" hidden aria-hidden="true" role="dialog" aria-label="Experience detail">
+  <div class="xp-dialog">
+    <button id="xp-close" class="xp-close" aria-label="Close">&#10005;</button>
+    <p class="xp-modal-kicker">// experience</p>
+    <h3 id="xp-modal-company" class="xp-modal-company"></h3>
+    <p id="xp-modal-role" class="xp-modal-role"></p>
+    <div id="xp-modal-body" class="xp-modal-body"></div>
   </div>
 </div>
 
