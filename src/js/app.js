@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
       mImg.src = img ? img.src : "";
       mImg.alt = name;
       mName.textContent = name;
+      mName.setAttribute("data-text", name);
       mNameB.textContent = name;
+      mNameB.setAttribute("data-text", name);
       mIssuer.textContent = detail ? detail.querySelector(".d-issuer").textContent.trim() : "";
       mSummary.textContent = detail ? detail.querySelector(".d-summary").textContent.trim() : "";
       mLinks.innerHTML = detail ? detail.querySelector(".d-links").innerHTML : "";
@@ -66,6 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
       certModal.hidden = false;
       certModal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      // glitch burst on the badge image each time the card opens
+      mImg.classList.remove("glitching");
+      void mImg.offsetWidth;
+      mImg.classList.add("glitching");
     };
     var closeCert = function () {
       certModal.hidden = true;

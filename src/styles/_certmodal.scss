@@ -165,6 +165,18 @@
 }
 .flip-front .flip-hint { margin-top: 4px; }
 
+// Subtle glitch shimmer on the badge image when the card opens
+.flip-badge img.glitching {
+  animation: badge-glitch .4s steps(3, end) 1;
+}
+@keyframes badge-glitch {
+  0%   { transform: translate(-2px, 0); filter: drop-shadow(2px 0 $cyan) drop-shadow(-2px 0 $magenta); }
+  40%  { transform: translate(2px, 0);  filter: drop-shadow(-2px 0 $cyan) drop-shadow(2px 0 $magenta); }
+  70%  { transform: translate(-1px, 0); filter: drop-shadow(1px 0 $cyan) drop-shadow(-1px 0 $magenta); }
+  100% { transform: none; filter: drop-shadow(0 0 20px $glow-soft); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .flip-inner { transition: none; }
+  .flip-badge img.glitching { animation: none; }
 }
