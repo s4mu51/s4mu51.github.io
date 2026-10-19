@@ -1,0 +1,170 @@
+// ── Certification flip modal ───────────────────────────────────
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(4, 7, 12, .85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  &[hidden] { display: none; }
+}
+
+.cert-modal-stage {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.cert-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid $border-strong;
+  color: $text-dim;
+  cursor: pointer;
+  z-index: 3;
+  transition: all .2s ease;
+  &:hover { border-color: $cyan; color: $cyan; box-shadow: 0 0 12px -2px $glow; }
+}
+
+// 3D flip card
+.flip-card {
+  width: 100%;
+  height: 460px;
+  perspective: 1400px;
+  cursor: pointer;
+
+  &:focus-visible { outline: 2px solid $cyan; outline-offset: 6px; }
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .6s cubic-bezier(.4, .2, .2, 1);
+}
+.flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 26px;
+  background: linear-gradient(160deg, $surface, $bg-2);
+  border: 1px solid $border-strong;
+  box-shadow: 0 0 0 1px $glow-soft, 0 24px 60px -16px $glow;
+  overflow: hidden;
+
+  // cyberpunk corner brackets
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $cyan;
+  }
+  &::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+  &::after  { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+}
+
+.flip-front {
+  justify-content: center;
+  gap: 8px;
+}
+.flip-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+  img {
+    max-height: 230px;
+    width: auto;
+    filter: drop-shadow(0 0 20px $glow-soft);
+  }
+}
+.flip-front h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: $heading;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  text-align: center;
+}
+.cert-m-kicker {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: .78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px $glow-soft;
+}
+#cert-m-name-back {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: $heading;
+  margin-top: 4px;
+}
+.cert-m-issuer {
+  font-family: $font-mono;
+  color: $cyan;
+  font-size: .82rem;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+.cert-m-summary {
+  margin-top: 16px;
+  color: $text;
+  font-size: .95rem;
+  line-height: 1.55;
+}
+.cert-m-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 16px;
+
+  a {
+    font-family: $font-mono;
+    font-size: .8rem;
+    letter-spacing: .5px;
+    color: $cyan;
+    padding: 8px 14px;
+    border: 1px solid $border-strong;
+    background: rgba(34, 211, 238, .06);
+    text-decoration: none;
+    transition: all .2s ease;
+    &:hover { background: rgba(34, 211, 238, .14); box-shadow: 0 0 14px -2px $glow; }
+  }
+}
+
+.flip-hint {
+  font-family: $font-mono;
+  font-size: .7rem;
+  letter-spacing: 1px;
+  color: $text-dim;
+  margin-top: 14px;
+}
+.flip-front .flip-hint { margin-top: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { transition: none; }
+}

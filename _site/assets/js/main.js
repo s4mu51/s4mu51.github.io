@@ -40,6 +40,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* Certification cards -> open flip modal (front badge / back summary + links) */
+  var certModal = document.getElementById("cert-modal");
+  if (certModal) {
+    var flip = document.getElementById("cert-flip");
+    var mImg = document.getElementById("cert-m-img");
+    var mName = document.getElementById("cert-m-name");
+    var mNameB = document.getElementById("cert-m-name-back");
+    var mIssuer = document.getElementById("cert-m-issuer");
+    var mSummary = document.getElementById("cert-m-summary");
+    var mLinks = document.getElementById("cert-m-links");
+
+    var openCert = function (card) {
+      var img = card.querySelector(".cert-badge img");
+      var name = card.querySelector("h3").textContent.trim();
+      var detail = card.querySelector(".cert-detail");
+      mImg.src = img ? img.src : "";
+      mImg.alt = name;
+      mName.textContent = name;
+      mNameB.textContent = name;
+      mIssuer.textContent = detail ? detail.querySelector(".d-issuer").textContent.trim() : "";
+      mSummary.textContent = detail ? detail.querySelector(".d-summary").textContent.trim() : "";
+      mLinks.innerHTML = detail ? detail.querySelector(".d-links").innerHTML : "";
+      flip.classList.remove("flipped");
+      certModal.hidden = false;
+      certModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    var closeCert = function () {
+      certModal.hidden = true;
+      certModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    var toggleFlip = function (e) {
+      if (e && e.target.closest("a")) return; // let verify links work
+      flip.classList.toggle("flipped");
+    };
+
+    Array.prototype.forEach.call(document.querySelectorAll(".cert"), function (card) {
+      card.addEventListener("click", function () { openCert(card); });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCert(card); }
+      });
+    });
+    flip.addEventListener("click", toggleFlip);
+    flip.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleFlip(); }
+    });
+    document.getElementById("cert-close").addEventListener("click", closeCert);
+    certModal.addEventListener("click", function (e) { if (e.target === certModal) closeCert(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !certModal.hidden) closeCert();
+    });
+  }
+
   /* Experience cards -> open detail modal */
   var xpModal = document.getElementById("xp-modal");
   if (xpModal) {
